@@ -1,4 +1,11 @@
 get '/' do
-  # Look in app/views/index.erb
+  
   erb :index
+end
+
+post '/text/schedule' do
+  p params[:text]
+  
+  Text.send(params[:text])
+  redirect '/'
 end

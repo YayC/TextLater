@@ -18,3 +18,5 @@ gem 'rake'
 gem 'twilio-ruby'
 
 gem 'faker'
+
+gem 'rspec'
