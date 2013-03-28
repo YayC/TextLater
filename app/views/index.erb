@@ -1,6 +1,7 @@
 <div class="container">
   <h1>Welcome to TextLater!</h1>
-  <p>Use the fields below to send an sms</p>
+  <p>Use the fields below to send an sms. If longer than 160 characters, it will
+    be broken across messages.</p>
   <form action="/text/schedule" method="post">
     <label for="to">To:</label>
     <input type='tel' name='text[to]' placeholder='e.g., ###-###-####'>
