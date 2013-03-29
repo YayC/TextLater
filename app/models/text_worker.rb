@@ -10,7 +10,7 @@ class TextWorker
                                                   })
 
     Text.find(args[:text_id].to_i).update_attribute(:complete, true)
-    puts message
+    Rails.logger.info message
   end
 
 end
