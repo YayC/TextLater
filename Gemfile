@@ -20,3 +20,6 @@ gem 'twilio-ruby'
 gem 'faker'
 
 gem 'rspec'
+
+gem 'redis'
+gem 'sidekiq'

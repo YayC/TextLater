@@ -23,6 +23,10 @@ require 'erb'
 
 require 'twilio-ruby'
 
+# to use sidekiq locally, we run: "bundle exec sidekiq -r./config/environment.rb"
+require 'redis'
+require 'sidekiq'
+
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
@@ -35,10 +39,14 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
 
-
+# on heroku, we run:
+# $ heroku config:add TWILIO_SID=...
+# $ heroku config:add TWILIO_AUTH_TOKEN=...
 
 if Sinatra::Application.development?
   twilio_data = YAML.load_file(APP_ROOT.join('config', 'twilio.yml'))
   ENV['TWILIO_SID'] = twilio_data['twilio_sid']
   ENV["TWILIO_AUTH_TOKEN"] = twilio_data['twilio_auth_token']
 end
+
+
