@@ -1,13 +1,13 @@
-<div class="container">
+<div class="container-fluid container">
+
   <h1>Welcome to <a href="text-later.heokuapps.com">TextLater!</a></h1>
   <p>Use the fields below to send an sms. If longer than 160 characters, it will
     be broken across messages.</p>
+
   <form action="/text/schedule" method="post">
     <label for="to">To:</label>
     <input type='tel' name='text[to]' placeholder='e.g. 123-456-7890' required>
 
-    <br><br>
-    
     <label for="body">Message:</label>
     <textarea name="text[body]" placeholder="e.g. happy mother's day..." 
     rows="5" cols="30" required></textarea>
@@ -20,7 +20,9 @@
     <label for="text[date]">time</label>
     <input type="text" name="text[time]" size="10" placeholder="hh:mm ?m">
 
-    <input type="submit" value="Send later &raquo;">
+    <br><br>
+
+    <input type="submit" class='btn btn-large btn-success' value="Send later &raquo;">
   </form>
 
 </div>
