@@ -22,8 +22,10 @@ require 'rspec' if development? or test?
 require 'erb'
 
 require 'twilio-ruby'
-
-# to use sidekiq locally, we run: "bundle exec sidekiq -r./config/environment.rb"
+#######################################################################
+############ to use sidekiq locally, we run:   ########################
+############ "bundle exec sidekiq -r./config/environment.rb" ##########
+#######################################################################
 require 'redis'
 require 'sidekiq'
 
