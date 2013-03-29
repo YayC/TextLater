@@ -8,8 +8,7 @@ class TextWorker
                                                   :to => args[:to],
                                                   :body => args[:body]
                                                   })
-    puts "!"*500
-    puts args[:text_id]
+
     Text.find(args[:text_id].to_i).update_attribute(:complete, true)
     puts message
   end

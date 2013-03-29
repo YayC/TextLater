@@ -12,13 +12,15 @@ class User < ActiveRecord::Base
 
 
     if args[:date] == "" && args[:time] == ""
+      puts "texting immediately"
+      puts"@"*100
       puts args
       job_id = TextWorker.perform_async( args )
 
     else
       run_at = Time.strptime("#{args[:date]} #{args[:time]}", "%m/%d/%Y %I:%M %p")
       args = args.slice!(:date, :time)
-      puts "performing at"
+      puts "scheduling text"
       puts "&"*500
       puts args
       job_id = TextWorker.perform_at( run_at, args )

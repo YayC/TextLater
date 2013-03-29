@@ -56,9 +56,9 @@ if Sinatra::Application.development?
   ENV["TWILIO_AUTH_TOKEN"] = twilio_data['twilio_auth_token']
 end
 
-configure do
-  uri = URI.parse(ENV["REDISTOGO_URL"])
-  REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
-end
+# configure do
+#   uri = URI.parse(ENV["REDISTOGO_URL"])
+#   REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
+# end
 
 
