@@ -8,8 +8,10 @@ class TextWorker
                                                   :to => args[:to],
                                                   :body => args[:body]
                                                   })
-
-    Text.find(args[:text_id]).update_attribute(:complete, true) unless Text.find(args[:text_id]).empty?
+    puts "!"*500
+    puts args[:text_id]
+    Text.find(args[:text_id].to_i).update_attribute(:complete, true) unless 
+      Text.find(args[:text_id].to_i).empty?
     puts message  end
 
 end

@@ -23,3 +23,5 @@ gem 'rspec'
 
 gem 'redis'
 gem 'sidekiq'
+
+gem 'slim'
