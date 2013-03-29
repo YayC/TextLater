@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
     text = Text.create( :from => args[:from], :to => args[:to], 
                         :body => args[:body], :user_id => self.id )
 
-    args.merge({:text_id => text.id})
+    args = args.merge({:text_id => text.id})
 
 
     if args[:date] == "" && args[:time] == ""
