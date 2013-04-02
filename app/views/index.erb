@@ -14,12 +14,13 @@
     
     <br><br>
 
-    <label for="text[date]">Date</label>
+    <label for="text[date]">Date:</label>
     <input type="text" name="text[date]" size="10" placeholder="mm/dd/yyyy">
 
-    <label for="text[date]">time</label>
+    <label for="text[date]">Time:</label>
     <input type="text" name="text[time]" size="10" placeholder="hh:mm ?m">
-
+    <label for="timezone">Timezone:</label>
+    <%= erb :_timezone_dropdown %>
     <br><br>
 
     <input type="submit" class='btn btn-large btn-success' value="Send later &raquo;">

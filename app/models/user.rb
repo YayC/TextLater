@@ -18,8 +18,9 @@ class User < ActiveRecord::Base
       job_id = TextWorker.perform_async( args )
 
     else
-      run_at = Time.strptime("#{args[:date]} #{args[:time]}", "%m/%d/%Y %I:%M %p")
-      args = args.slice!(:date, :time)
+      run_at = with_time_zone(args[:timezone]){Time.strptime("#{args[:date]} #{args[:time]}", "%m/%d/%Y %I:%M %p")}.utc
+
+      args = args.slice!(:date, :time, :timezone)
       puts "scheduling text"
       puts "&"*500
       puts args
@@ -27,6 +28,15 @@ class User < ActiveRecord::Base
     end
     job_id
   end
-   
+
+  private
+
+  def with_time_zone(tz_name)
+    prev_tz = ENV['TZ']
+    ENV['TZ'] = tz_name
+    yield
+  ensure
+    ENV['TZ'] = prev_tz
+  end   
 
 end
