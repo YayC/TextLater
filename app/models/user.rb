@@ -29,7 +29,6 @@ class User < ActiveRecord::Base
     job_id
   end
 
-  private
 
   def with_time_zone(tz_name)
     prev_tz = ENV['TZ']
