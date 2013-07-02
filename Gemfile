@@ -23,5 +23,6 @@ gem 'rspec'
 
 gem 'redis'
 gem 'sidekiq'
+gem 'autoscaler'
 
 gem 'slim'
