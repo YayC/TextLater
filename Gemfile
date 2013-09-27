@@ -1,5 +1,5 @@
-source :rubygems
-ruby "1.9.3"
+source 'https://rubygems.org'
+ruby '2.0.0'
 # PostgreSQL driver
 gem 'pg'
 
@@ -26,3 +26,5 @@ gem 'sidekiq'
 gem 'autoscaler'
 
 gem 'slim'
+
+gem 'newrelic_rpm'
